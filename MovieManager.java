@@ -42,6 +42,7 @@ public class MovieManager
                 double rating = Double.parseDouble(scanner.nextLine());
                 movieCollection.addMovie(title, year, rating);
             }
+            /*
             else if (choice == 2)
             {
                 System.out.println("Title of movie to be removed: ");
@@ -73,6 +74,7 @@ public class MovieManager
             {
                 movieCollection.displayMovies();
             }
+            */
         }
         scanner.close();
     }

@@ -13,7 +13,25 @@ public class MovieCollection
     public void addMovie(String title, int year, double rating)
     {
         Movie newMovie = new Movie(title, year, rating);
-        movies.add(newMovie);
+        // if inserting at beginning of ArrayList
+        if (movies.size() == 0 || (newMovie.getRating() >= movies.get(0).getRating()))
+        {
+            movies.add(0, newMovie);
+        }
+        else if (newMovie.getRating() < movies.get(movies.size() - 1).getRating())
+        {
+            movies.add(newMovie);
+        }
+        else
+        {
+            for (int i = 0; i < movies.size() - 1; i++)
+            {
+                if (newMovie.getRating() <= movies.get(i).getRating() && newMovie.getRating() > movies.get(i+1).getRating())
+                {
+                    movies.add(i, newMovie);
+                }
+            }
+        }
         System.out.println("Movie added successfully!");
     }
 
