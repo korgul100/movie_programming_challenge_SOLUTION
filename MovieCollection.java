@@ -29,7 +29,9 @@ public class MovieCollection
                 if (newMovie.getRating() <= movies.get(i).getRating() && newMovie.getRating() > movies.get(i+1).getRating())
                 {
                     movies.add(i, newMovie);
+                    break;
                 }
+                System.out.println(i);
             }
         }
         System.out.println("Movie added successfully!");
@@ -77,11 +79,11 @@ public class MovieCollection
     // displays all movies in the collection in order sorted by rating
     public void displayMovies()
     {
-        sortMoviesByRating();
-        System.out.println(movies.size());
-        for (int i = 0; i < movies.size(); i++)
+        int index = 0;
+        while (index < movies.size())
         {
-            System.out.println(movies.get(i).getTitle() + ", " + movies.get(i).getYear() + ", " + movies.get(i).getRating());
+            System.out.println(movies.get(index).toString());
+            index++;
         }
     }
 

@@ -42,6 +42,10 @@ public class MovieManager
                 double rating = Double.parseDouble(scanner.nextLine());
                 movieCollection.addMovie(title, year, rating);
             }
+            else if (choice == 4)
+            {
+                movieCollection.displayMovies();
+            }
             /*
             else if (choice == 2)
             {
